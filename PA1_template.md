@@ -6,7 +6,7 @@ April 30, 2016
 
 ## Introduction
 
-This report lays out the results of analyzing data collected from a personal activity monitoring device over the duration of two months. The dataset contained the number of steps taken by the device user per 5 minute intervals across the two month span. The data was investigated to  
+This report lays out the results of analyzing data collected from a personal activity monitoring device over the duration of two months. The dataset contained the number of steps taken by the device user per 5 minute intervals across the two month span. The data was investigated to   
 
 * Study the activity for each day.
 * Realize the most active time intervals of the day averaged across all days.
@@ -67,7 +67,7 @@ The new variable, *t_s* contains the total number of steps taken for each date i
 with(t_s, hist(Total_Steps, breaks = 10, col = "lightgreen", main = "Total Steps Each Day", xlab = "Total Steps"))
 ```
 
-![](Assignment_1_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 From the information in variable *t_s*, the mean and median of the total steps taken per day was calculated.
 
@@ -97,7 +97,7 @@ interval_steps <- summarise(by_interval, avg_steps = mean(steps, na.rm = TRUE))
 plot(interval_steps, type = "l", col = "blue", main = "Average Steps Per Interval", xlab = "Interval", ylab = "Average Steps") 
 ```
 
-![](Assignment_1_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 ```r
 max_steps <- interval_steps[which.max(interval_steps$avg_steps),]
@@ -145,7 +145,7 @@ Median_change <- ((Median_TSN-Median_TS)/Median_TS)*100
 with(t_s_n, hist(Total_Steps_n, breaks = 10, col = "lightgreen", main = "Total Steps Each Day", xlab = "Total Steps"))
 ```
 
-![](Assignment_1_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
 
 ```
@@ -184,4 +184,6 @@ t_s_w <- summarize(by_interval_w, avg_steps = mean(steps, na.rm = TRUE))
 with(t_s_w, xyplot(avg_steps~interval|weekend, type = "l", layout=c(1,2)))
 ```
 
-![](Assignment_1_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+
+##End of Report
