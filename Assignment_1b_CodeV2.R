@@ -9,7 +9,7 @@ by_interval <- group_by(raw_data, interval)
 #Calculating the average number of steps over total period for each interval
 interval_steps <- summarise(by_interval, avg_steps = mean(steps, na.rm = TRUE))
 
-#Time series plor for the average steps per interval
+#Time series plot for the average steps per interval
 png("Average_Steps_per_Interval.png")
 plot(interval_steps, type = "l", col = "blue", main = "Average Steps Per Interval", xlab = "Interval", ylab = "Average Steps") 
 dev.off()

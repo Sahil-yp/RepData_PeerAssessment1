@@ -18,4 +18,4 @@ png("Hist_Total_Steps_Each_Day.png")
 with(t_s, hist(Total_Steps, breaks = 10, col = "lightgreen", main = "Total Steps Each Day", xlab = "Total Steps"))
 dev.off()
 
-paste("The mean total number of steps taken per day is ", Mean_TS, "and the median of the total number of steps taken per day is ", Median_TS)
+paste("The mean total number of steps taken per day is ", round(Mean_TS, digits = 2), "and the median of the total number of steps taken per day is ", round(Median_TS, digits = 2))

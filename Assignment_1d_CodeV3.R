@@ -13,11 +13,11 @@ week_data <- mutate(raw_data,
        )
 
 # Grouping by interval 
-by_interval <- group_by(week_data, interval, weekend)
+by_interval_w <- group_by(week_data, interval, weekend)
 
-t_s <- summarize(by_interval, avg_steps = mean(steps, na.rm = TRUE))
+t_s_w <- summarize(by_interval_w, avg_steps = mean(steps, na.rm = TRUE))
 
 # Creating the plot
 png("Avg_Weekend_Weekday_Steps.png")
-with(t_s, xyplot(avg_steps~interval|weekend, type = "l", layout=c(1,2)))
+with(t_s_w, xyplot(avg_steps~interval|weekend, type = "l", layout=c(1,2)))
 dev.off()
